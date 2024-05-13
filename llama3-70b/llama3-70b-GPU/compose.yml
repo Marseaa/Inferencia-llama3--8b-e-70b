@@ -1,0 +1,27 @@
+# compose.yml
+services:
+    yt:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        image: llama3_imagem_70b:latest
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                        - driver: nvidia
+                          count: 1
+                          capabilities: [gpu]
+        environment:
+            - DISPLAY=:0
+            - NVIDIA_DRIVER_CAPABILITIES=all
+            - NVIDIA_VISIBLE_DEVICES=all
+            - DEBUG_COLORS=1
+            - TERM=xterm-256color
+            - COLORTERM=truecolor
+            - CHOKIDAR_USEPOLLING=true
+        volumes:
+            - ./app.py:/app/app.py
+            - ./Meta-Llama-3-70B-Instruct:/app/Meta-Llama-3-70B-Instruct
+        stdin_open: true  # entrada interativa
+        tty: true
