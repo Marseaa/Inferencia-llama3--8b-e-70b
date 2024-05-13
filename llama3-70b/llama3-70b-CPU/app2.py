@@ -14,7 +14,7 @@ def gerar_texto_pirata(texto_inicial):
 
     """
     model_id = "meta-llama/Meta-Llama-3-70B-Instruct"
-    token_marseaa = "<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>"
+    token_perfil = "<hinsira o token aqui>"
 
     tokenizer = AutoTokenizer.from_pretrained(model_id)
 
@@ -22,7 +22,7 @@ def gerar_texto_pirata(texto_inicial):
         model_id,
         torch_dtype=torch.bfloat16,
         device_map="auto",
-        token=token_marseaa
+        token=token_perfil
     )
 
     messages = [
