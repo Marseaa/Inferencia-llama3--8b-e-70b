@@ -21,7 +21,7 @@ services:
             - COLORTERM=truecolor
             - CHOKIDAR_USEPOLLING=true
         volumes:
-            - ./app.py:/app/app.py
+            - ./app.py:/app/llama3-8b-GPU/app.py
             - ./Meta-Llama-3-8B-Instruct:/app/Meta-Llama-3-8B-Instruct
         stdin_open: true  # entrada interativa
         tty: true
