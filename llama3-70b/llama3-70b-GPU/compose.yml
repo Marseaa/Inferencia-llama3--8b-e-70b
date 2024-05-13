@@ -22,6 +22,5 @@ services:
             - CHOKIDAR_USEPOLLING=true
         volumes:
             - ./app.py:/app/app.py
-            - ./Meta-Llama-3-70B-Instruct:/app/Meta-Llama-3-70B-Instruct
         stdin_open: true  # entrada interativa
         tty: true

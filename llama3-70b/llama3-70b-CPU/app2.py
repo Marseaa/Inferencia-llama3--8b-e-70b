@@ -13,14 +13,16 @@ def gerar_texto_pirata(texto_inicial):
     str: The generated pirate-themed text.
 
     """
-    model_id = "/app/Meta-Llama-3-70B-Instruct"
- 
+    model_id = "meta-llama/Meta-Llama-3-70B-Instruct"
+    token_marseaa = "<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>"
+
     tokenizer = AutoTokenizer.from_pretrained(model_id)
 
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
         torch_dtype=torch.bfloat16,
         device_map="auto",
+        token=token_marseaa
     )
 
     messages = [
